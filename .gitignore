@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Data & models (never commit raw datasets or large weights)
+data/raw/
+data/processed/
+data/train/
+data/val/
+data/test/
+data/SYNTHETIC_DATA_NOTICE.md
+!data/README.md
+data_seg/
+models/*.pt
+models/metrics.json
+models/metadata.json
+models/metadata_seg.json
+models/benchmark.json
+models/error_analysis.json
+models/*_synthetic.json
+!models/README.md
+runs/
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+
+# Env
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

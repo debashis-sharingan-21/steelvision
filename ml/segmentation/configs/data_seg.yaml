@@ -1,0 +1,11 @@
+# Ultralytics YOLO-seg dataset config for Severstal (or the synthetic stand-in).
+# Same no-`path:`-key convention as ml/configs/data.yaml — see the comment there.
+train: ../../../data_seg/train/images
+val: ../../../data_seg/val/images
+test: ../../../data_seg/test/images
+
+names:
+  0: defect_1
+  1: defect_2
+  2: defect_3
+  3: defect_4

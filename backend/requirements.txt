@@ -1,0 +1,11 @@
+fastapi>=0.140
+uvicorn[standard]>=0.52
+python-multipart>=0.0.32
+pydantic>=2.13
+pydantic-settings>=2.15
+pillow>=12.0
+numpy>=2.0
+torch>=2.13
+ultralytics>=8.4
+pytest>=8.0
+httpx>=0.28
