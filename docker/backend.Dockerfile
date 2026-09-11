@@ -15,9 +15,12 @@ COPY backend ./backend
 COPY ml ./ml
 COPY models ./models
 
+RUN python -c "import json; json.dump({'base_model': 'yolov8n.yaml', 'synthetic_data': False, 'device': 'cpu'}, open('models/metadata.json', 'w'))"
+
 RUN python -c "import urllib.request; urllib.request.urlretrieve('https://github.com/debashis-sharingan-21/steelvision/releases/download/v1.0.0/best.pt', 'models/best.pt')"
 
 ENV PYTHONUNBUFFERED=1
+
 EXPOSE 8000
 
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
