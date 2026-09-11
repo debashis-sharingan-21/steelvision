@@ -1,0 +1,12 @@
+{
+  "weights": "models/best.pt",
+  "device": "cpu",
+  "synthetic_data": false,
+  "runs": 50,
+  "mean_ms": 63.35,
+  "median_ms": 56.07,
+  "p95_ms": 70.29,
+  "min_ms": 47.39,
+  "max_ms": 338.43,
+  "fps": 15.79
+}

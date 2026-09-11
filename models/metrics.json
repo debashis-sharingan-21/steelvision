@@ -1,0 +1,33 @@
+{
+  "weights": "models/best.pt",
+  "split": "test",
+  "imgsz": 200,
+  "device": "cpu",
+  "synthetic_data": false,
+  "precision": 0.6628629412761363,
+  "recall": 0.5900448850466287,
+  "f1": 0.6243378479562484,
+  "map50": 0.6765381077162687,
+  "map50_95": 0.3447071994106272,
+  "per_class_ap50": {
+    "crazing": {
+      "ap50": 0.2989487767438378
+    },
+    "inclusion": {
+      "ap50": 0.7586571661998105
+    },
+    "patches": {
+      "ap50": 0.8703735562904936
+    },
+    "pitted_surface": {
+      "ap50": 0.7833046493774055
+    },
+    "rolled-in_scale": {
+      "ap50": 0.4729399263734173
+    },
+    "scratches": {
+      "ap50": 0.8750045713126475
+    }
+  },
+  "eval_wall_time_s": 18.70169140001235
+}

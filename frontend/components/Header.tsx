@@ -10,13 +10,35 @@ export function Header() {
   const [healthy, setHealthy] = useState<boolean | null>(null);
 
   useEffect(() => {
-    getModelInfo()
-      .then(setInfo)
-      .catch(() => setInfo(null));
-    getHealth()
-      .then((h) => setHealthy(h.model_loaded))
-      .catch(() => setHealthy(false));
-  }, []);
+    let mounted = true;
+
+  const checkApi = async () => {
+    try {
+      const [modelInfo, health] = await Promise.all([
+        getModelInfo(),
+        getHealth(),
+      ]);
+
+      if (!mounted) return;
+
+      setInfo(modelInfo);
+      setHealthy(health.model_loaded);
+    } catch {
+      if (!mounted) return;
+
+      setHealthy(false);
+    }
+  };
+
+  checkApi();
+
+  const interval = setInterval(checkApi, 10000);
+
+  return () => {
+    mounted = false;
+    clearInterval(interval);
+  };
+}, []);
 
   return (
     <header className="border-b border-border bg-surface">

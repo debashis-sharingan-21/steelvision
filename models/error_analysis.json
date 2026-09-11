@@ -1,0 +1,104 @@
+{
+  "weights": "models/best.pt",
+  "split": "test",
+  "iou_threshold": 0.5,
+  "synthetic_data": false,
+  "per_class": {
+    "crazing": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 97,
+      "precision": 0.6667,
+      "recall": 0.0202
+    },
+    "inclusion": {
+      "tp": 102,
+      "fp": 42,
+      "fn": 49,
+      "precision": 0.7083,
+      "recall": 0.6755
+    },
+    "patches": {
+      "tp": 117,
+      "fp": 44,
+      "fn": 20,
+      "precision": 0.7267,
+      "recall": 0.854
+    },
+    "pitted_surface": {
+      "tp": 42,
+      "fp": 11,
+      "fn": 22,
+      "precision": 0.7925,
+      "recall": 0.6562
+    },
+    "rolled-in_scale": {
+      "tp": 48,
+      "fp": 25,
+      "fn": 54,
+      "precision": 0.6575,
+      "recall": 0.4706
+    },
+    "scratches": {
+      "tp": 67,
+      "fp": 32,
+      "fn": 9,
+      "precision": 0.6768,
+      "recall": 0.8816
+    }
+  },
+  "worst_images": [
+    {
+      "image": "inclusion_130.jpg",
+      "false_positives": 1,
+      "false_negatives": 6
+    },
+    {
+      "image": "scratches_126.jpg",
+      "false_positives": 6,
+      "false_negatives": 1
+    },
+    {
+      "image": "inclusion_13.jpg",
+      "false_positives": 4,
+      "false_negatives": 2
+    },
+    {
+      "image": "inclusion_292.jpg",
+      "false_positives": 1,
+      "false_negatives": 5
+    },
+    {
+      "image": "patches_230.jpg",
+      "false_positives": 2,
+      "false_negatives": 4
+    },
+    {
+      "image": "inclusion_125.jpg",
+      "false_positives": 1,
+      "false_negatives": 4
+    },
+    {
+      "image": "patches_224.jpg",
+      "false_positives": 3,
+      "false_negatives": 2
+    },
+    {
+      "image": "pitted_surface_197.jpg",
+      "false_positives": 2,
+      "false_negatives": 3
+    },
+    {
+      "image": "crazing_119.jpg",
+      "false_positives": 0,
+      "false_negatives": 4
+    },
+    {
+      "image": "crazing_190.jpg",
+      "false_positives": 0,
+      "false_negatives": 4
+    }
+  ],
+  "images_with_errors": 186,
+  "images_evaluated": 270
+}
