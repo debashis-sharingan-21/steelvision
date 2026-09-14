@@ -9,44 +9,23 @@ export function Header() {
   const [info, setInfo] = useState<ModelInfoResponse | null>(null);
   const [healthy, setHealthy] = useState<boolean | null>(null);
 
-  useEffect(() => {
-    let mounted = true;
+useEffect(() => {
+  const checkApi = () => {
+    getModelInfo()
+      .then(setInfo)
+      .catch(() => setInfo(null));
 
-    const checkApi = async () => {
-      try {
-        const modelInfo = await getModelInfo();
+    getHealth()
+      .then((h) => setHealthy(h.model_loaded))
+      .catch(() => setHealthy(false));
+  };
 
-        if (mounted) {
-          setInfo(modelInfo);
-        }
-      } catch {
-        if (mounted) {
-          setInfo(null);
-        }
-      }
+  checkApi();
 
-      try {
-        const health = await getHealth();
+  const interval = setInterval(checkApi, 10000);
 
-        if (mounted) {
-          setHealthy(health.model_loaded);
-        }
-      } catch {
-        if (mounted) {
-          setHealthy(false);
-        }
-      }
-    };
-
-    checkApi();
-
-    const interval = setInterval(checkApi, 10000);
-
-    return () => {
-      mounted = false;
-      clearInterval(interval);
-    };
-  }, []);
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <header className="border-b border-border bg-surface">
@@ -105,7 +84,7 @@ export function Header() {
                 }`}
               />
               <span className="text-xs text-muted">
-                {healthy ? "Online" : "Degraded"}
+                {healthy ? "Online" : "Offline"}
               </span>
             </span>
           )}
