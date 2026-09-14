@@ -1,4 +1,3 @@
-````markdown
 # SteelVision
 
 **AI-powered surface defect detection for stainless steel strips** — a YOLOv8 detector behind a FastAPI backend and a Next.js inspection dashboard, built around the NEU-DET surface defect dataset.
@@ -716,5 +715,4 @@ National Institute of Technology, Rourkela
 
 MIT — see [LICENSE](LICENSE).
 
-````
 
